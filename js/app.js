@@ -24,10 +24,18 @@ $(document).ready(function() {
   $('.ryu-ready').show();
 
 });
-  $(".ryu").keydown(function(e){
-  	e.preventDefault();
-  	e.88;
-  })
+  $(document).keydown(function(e) {
+	if (e.keyCode == 88){
+		$('.ryu-ready, .ryu-still, .ryu-throwing').hide();
+		$('.ryu-cool').show();
+		}
+	})
+	.keyup(function(e) {
+	if (e.keyCode == 88){
+		$('.ryu-cool, .ryu-ready, .ryu-throwing').hide();
+		$('.ryu-still').show();
+		}
+	});
 });
 
 function playHadouken () {
